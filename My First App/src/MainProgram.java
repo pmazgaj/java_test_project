@@ -10,6 +10,7 @@ public class MainProgram {
         user.setUser("Raweł", "Pack");
         user.calculatedValue(4, 5);
         user.getUser();
+        user.getMail();
     }
 
 
