@@ -6,10 +6,11 @@ public class User {
     private String First_name;
     private String Last_name;
     private String Mail;
+    private int Salary = 2000;
 
-    private void setMail(){
+    private void setMail() {
         this.Mail = First_name + "." + Last_name + "@company.com";
-        this.Mail = this.Mail.toLowerCase().trim()
+        this.Mail = this.Mail.toLowerCase().trim();
     }
 
     public String getMail() {
@@ -19,6 +20,7 @@ public class User {
 
     public void getUser() {
         System.out.println(First_name + " " + Last_name);
+        System.out.print(String.format("Salary: %d", this.Salary));
     }
 
 
@@ -28,8 +30,10 @@ public class User {
 
     }
 
-    public int calculatedValue(int repetitions, int period) {
-        return repetitions * period;
+    public int calculateSalary(int repetitions, int period) {
+        this.Salary = this.Salary * repetitions * period;
+        System.out.println(this.Salary);
+        return this.Salary;
     }
 
     public User(String first_name, String last_name) {
@@ -38,7 +42,12 @@ public class User {
         setMail();
     }
 
-
+    public User(String first_name, String last_name, int salary) {
+        this.First_name = first_name;
+        this.Last_name = last_name;
+        this.Salary = salary;
+        setMail();
+    }
 }
 
 
